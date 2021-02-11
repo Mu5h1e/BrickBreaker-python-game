@@ -2,7 +2,7 @@ import random
 
 class item:
     def __init__(self):
-        self.X_POSITION = 0
+        self.X_POSITION = 22
         self.Y_POSITION = 0
         self.LIVES = 3
 
@@ -10,7 +10,6 @@ class paddleBoi(item):
     def __init__(self):
         super().__init__()
         self.body = ['~','~','~','~','~']
-        self.body_height = 1
         self.body_width = 5
         self.LIVES = 3
         self.SCORE = 0

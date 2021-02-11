@@ -2,6 +2,7 @@ import colorama
 import itertools
 import sys
 
+import numpy as np
 from print_messages import print_life_lost, print_game_over
 
 from component_creation import boxstable
@@ -10,7 +11,7 @@ from random import seed,randint
 class Arena_Board:
     def __init__(self, paddle):
         self.game_width = 50
-        self.game_height = 50
+        self.game_height = 52
         
         self.frame_width = 50
         self.frame_height = 50
@@ -19,21 +20,17 @@ class Arena_Board:
 
         self.game_clock = 0
 
-        self.gameBoardArr = [[[" "] for i in range(self.gameWidth)] for j in range(self.gameHeight)]
+        self.game_board = np.zeros((self.game_width, self.game_height))
     
-        self.ground_size = 1
-        self.sky_size = 1
+        # self.ground_size = 1
+        # self.sky_size = 1
 
-        for i in range(self.sky_size):
-            for aj in range(self.game_width):
-                self.gameBoardArr[i][j][0] = "*"
-        
-        for i in range(self.ground_size):
-            for j in range(self.game_width):
-                self.gameBoardArr[i][j][0] = "*"
+        for __ in range(self.game_width):
+            self.gameBoardArr[0][__] = 9        
+            self.gameBoardArr[-1][__] = 9
         
         for i in range(paddle.X_POSITION, paddle.X_POSITION + paddle.body_width):
-            self.gameBoardArr[-self.ground_size -1][j][0] = "~"
+            self.gameBoardArr[-2][i] = 1
     
     def update_clock(self):
         self.gameClock += 1
