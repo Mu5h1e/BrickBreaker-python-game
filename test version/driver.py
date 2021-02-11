@@ -1,5 +1,6 @@
 import numpy as np
 import sys, os
+import input
 np.set_printoptions(threshold=sys.maxsize)
 
 class game_engine:
@@ -66,8 +67,8 @@ def driver_function():
     while start:
         inp = input("enter a or d")
         os.system('clear')
-
-        if inp == 'a':
+        inst = inp.get()
+        if inst == 'a':
             pc.handle_a_key()
             print(pc.position)
             ge.handle_refresh(pc.position)
