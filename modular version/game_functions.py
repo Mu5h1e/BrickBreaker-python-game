@@ -25,7 +25,7 @@ def game_loop(arena, paddle):
 def start_game():
     
     paddle=paddleBoi()
-    arena_instance=Arena_Board(paddleBoi)
+    arena_instance=Arena_Board(paddle)
     os.system('clear')
 
     while True:
