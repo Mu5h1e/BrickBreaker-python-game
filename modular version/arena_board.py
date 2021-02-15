@@ -16,7 +16,7 @@ class Arena_Board:
         self.frame_height = 50
         self.offset = 0
         self.frame_speed = 1
-
+        self.paddle = paddle
         self.game_clock = 0
 
         self.game_board = np.zeros((self.game_width, self.game_height))
@@ -28,7 +28,7 @@ class Arena_Board:
             self.game_board[0][__] = 9        
             self.game_board[-1][__] = 9
         
-        for i in range(paddle.X_POSITION, paddle.X_POSITION + paddle.body_width):
+        for i in range(self.paddle.X_POSITION, self.paddle.X_POSITION + self.paddle.body_width):
             self.game_board[-2][i] = 1
 
         number_of_bricks = randint(25, 75)

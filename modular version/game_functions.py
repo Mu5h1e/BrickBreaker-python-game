@@ -1,4 +1,4 @@
-import os
+import os, time
 import input
 
 from game_handler import paddle_handler
@@ -19,6 +19,8 @@ def game_loop(arena, paddle):
         # arena.print_arena(paddle)
         # arena.update_frame(paddle)
         game_end=0
+        time.sleep(0.5)
+        os.system('clear')
     
     return end_game
 
