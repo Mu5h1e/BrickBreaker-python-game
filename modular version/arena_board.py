@@ -5,14 +5,13 @@ import sys
 import numpy as np
 from print_messages import print_life_lost, print_game_over
 
-from component_creation import boxstable
 from random import seed,randint
 
 class Arena_Board:
     def __init__(self, paddle):
         self.game_width = 50
-        self.game_height = 52
-        
+        self.game_height = 50
+        self.brick_width = 3
         self.frame_width = 50
         self.frame_height = 50
         self.offset = 0
@@ -26,11 +25,36 @@ class Arena_Board:
         # self.sky_size = 1
 
         for __ in range(self.game_width):
-            self.gameBoardArr[0][__] = 9        
-            self.gameBoardArr[-1][__] = 9
+            self.game_board[0][__] = 9        
+            self.game_board[-1][__] = 9
         
         for i in range(paddle.X_POSITION, paddle.X_POSITION + paddle.body_width):
-            self.gameBoardArr[-2][i] = 1
-    
+            self.game_board[-2][i] = 1
+
+        number_of_bricks = randint(25, 75)
+
+        # for i in range(number_of_bricks): randomised brick generation
+
+
     def update_clock(self):
-        self.gameClock += 1
+        self.game_clock += 1
+        self.display_board()
+
+    def check_ball_collision(self):
+        return 
+
+    def restrict_paddle_movement(self):
+        return
+
+    def display_board(self):
+        for _ in range(self.game_height):
+            for __ in range(self.game_width):
+                if self.game_board[_][__] == 9:
+                    print("*",end="")
+                elif self.game_board[_][__] == 1:
+                    print("~",end="")
+                elif self.game_board[_][__] == 2:
+                    print("o",end="")
+                elif self.game_board[_][__] == 3:
+                    print("z", end="")
+            print()

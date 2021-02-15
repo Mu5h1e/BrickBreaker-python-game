@@ -7,7 +7,7 @@ def show_main_menu():
 
     gameChoice = input("")
     if gameChoice == "":
-        startGame()
+        start_game()
     elif gameChoice == "Q":
         print("Thanks for Playing")
     else:
