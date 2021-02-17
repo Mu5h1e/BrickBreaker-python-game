@@ -46,6 +46,11 @@ class Arena_Board:
     def restrict_paddle_movement(self):
         return
 
+    def remove_paddle():
+        for _ in range(self.game_width):
+            if self.game_board[-2][_] == 1:
+                self.game_board[-2][_] = 0
+
     def display_board(self):
         for _ in range(self.game_height):
             for __ in range(self.game_width):
