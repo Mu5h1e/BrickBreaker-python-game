@@ -15,8 +15,10 @@ def game_loop(arena, paddle):
     if paddle.LIVES <= 0:
         game_end = end_game()
     else:
+        arena.restrict_paddle_movement()
         arena.update_clock()
         game_end=0
+        time.sleep(0.025)
         os.system('clear')
     
     return end_game

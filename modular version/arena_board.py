@@ -43,6 +43,11 @@ class Arena_Board:
         return 
 
     def restrict_paddle_movement(self):
+        if self.paddle.X_POSITION <= 1:
+            self.paddle.X_POSITION = 0
+        
+        if self.paddle.X_POSITION + self.paddle.body_width >= self.game_width-1 :
+            self.paddle.X_POSITION = self.game_width - 6
         return
 
     def remove_paddle(self):
