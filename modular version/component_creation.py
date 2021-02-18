@@ -1,7 +1,7 @@
 
 class item:
     def __init__(self):
-        self.X_POSITION = 22
+        self.X_POSITION = 10
         self.Y_POSITION = 0
         self.LIVES = 3
 
@@ -15,10 +15,10 @@ class paddleBoi(item):
         self.speed = 1
     
     def move_left(self):
-        self.X_POSITION -= 1
+        self.X_POSITION = self.X_POSITION - 1
     
     def move_right(self):
-        self.X_POSITION += 1
+        self.X_POSITION = self.X_POSITION + 1
     
     def display(self):
         for i in self.body:

@@ -27,7 +27,6 @@ class Arena_Board:
         for __ in range(self.game_width):
             self.game_board[0][__] = 9        
             self.game_board[-1][__] = 9
-        
         for i in range(self.paddle.X_POSITION, self.paddle.X_POSITION + self.paddle.body_width):
             self.game_board[-2][i] = 1
 
@@ -46,16 +45,23 @@ class Arena_Board:
     def restrict_paddle_movement(self):
         return
 
-    def remove_paddle():
+    def remove_paddle(self):
         for _ in range(self.game_width):
             if self.game_board[-2][_] == 1:
                 self.game_board[-2][_] = 0
+    
+    def rerender_paddle(self):
+        for i in range(self.paddle.X_POSITION, self.paddle.X_POSITION + self.paddle.body_width):
+            self.game_board[-2][i] = 1
+
 
     def display_board(self):
         for _ in range(self.game_height):
             for __ in range(self.game_width):
                 if self.game_board[_][__] == 9:
                     print("*",end="")
+                elif self.game_board[_][__] == 0:
+                    print(" ",end="")
                 elif self.game_board[_][__] == 1:
                     print("~",end="")
                 elif self.game_board[_][__] == 2:
@@ -63,3 +69,4 @@ class Arena_Board:
                 elif self.game_board[_][__] == 3:
                     print("z", end="")
             print()
+        print(self.paddle.X_POSITION)

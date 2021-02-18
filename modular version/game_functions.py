@@ -16,10 +16,7 @@ def game_loop(arena, paddle):
         game_end = end_game()
     else:
         arena.update_clock()
-        # arena.print_arena(paddle)
-        # arena.update_frame(paddle)
         game_end=0
-        time.sleep(0.5)
         os.system('clear')
     
     return end_game
