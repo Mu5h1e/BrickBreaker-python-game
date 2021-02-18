@@ -43,7 +43,7 @@ class Arena_Board:
         return 
 
     def restrict_paddle_movement(self):
-        if self.paddle.X_POSITION <= 1:
+        if self.paddle.X_POSITION < 0:
             self.paddle.X_POSITION = 0
         
         if self.paddle.X_POSITION + self.paddle.body_width >= self.game_width-1 :
@@ -74,4 +74,4 @@ class Arena_Board:
                 elif self.game_board[_][__] == 3:
                     print("z", end="")
             print()
-        print(self.paddle.X_POSITION)
+        # print(self.paddle.X_POSITION)

@@ -18,7 +18,7 @@ def game_loop(arena, paddle):
         arena.restrict_paddle_movement()
         arena.update_clock()
         game_end=0
-        time.sleep(0.025)
+        time.sleep(0.035)
         os.system('clear')
     
     return end_game
