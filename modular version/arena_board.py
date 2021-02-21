@@ -20,9 +20,6 @@ class Arena_Board:
         self.game_clock = 0
 
         self.game_board = np.zeros((self.game_width, self.game_height))
-    
-        # self.ground_size = 1
-        # self.sky_size = 1
 
         for __ in range(self.game_width):
             self.game_board[0][__] = 9        
@@ -31,9 +28,6 @@ class Arena_Board:
             self.game_board[-2][i] = 1
 
         number_of_bricks = randint(25, 75)
-
-        # for i in range(number_of_bricks): randomised brick generation
-
 
     def update_clock(self):
         self.game_clock += 1
